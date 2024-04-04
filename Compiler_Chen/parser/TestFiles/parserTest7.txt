@@ -1,0 +1,26 @@
+PROCEDURE Add();
+BEGIN
+WRITELN(x);
+x := x + 2;
+END;
+var x,y:integer;
+BEGIN
+x := 2;
+y := x + 1;
+x := x + y;
+WRITELN(x * y);
+IF x > y THEN
+BEGIN
+WRITELN(x);
+WRITELN(y);
+END;
+x := 0;
+WHILE x < 10 DO
+BEGIN
+WRITELN(x);
+x := x + 1;
+END;
+Add();
+WRITELN(x);
+END;
+.

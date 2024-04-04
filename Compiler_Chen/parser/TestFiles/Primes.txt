@@ -1,0 +1,20 @@
+var
+number:integer;
+prime:boolean;
+
+begin
+WRITELN('CHECK IF INTEGER IS A PRIME: ');
+READLN(number);
+prime := TRUE;
+FOR i := 2 TO number-1 DO
+BEGIN
+    IF number mod i = 0 THEN
+    BEGIN
+        WRITELN(number+ ' IS NOT PRIME, ONE OF ITS FACTORS IS '+i);
+        prime := FALSE;
+        i := number-1;
+    END;
+END;
+IF prime THEN WRITELN(number+ ' IS PRIME');
+end;
+.

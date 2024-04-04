@@ -1,0 +1,8 @@
+{
+    "java.project.sourcePaths": [
+        ""
+    ],
+    "java.checkstyle.version": "8.19",
+    "editor.parameterHints.enabled": false
+
+}

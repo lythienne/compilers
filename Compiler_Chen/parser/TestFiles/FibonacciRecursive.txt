@@ -1,0 +1,23 @@
+var 
+numDigits:integer;
+
+function fibonacci(x:integer):integer;
+begin
+if x<=2 then fibonacci := 1;
+else fibonacci := fibonacci(x-1) + fibonacci(x-2);
+end;
+
+function getDigits():integer;
+begin
+writeln('How many digits of the fibonacci sequence would you like to see?');
+readln(getDigits);
+end;
+
+begin 
+numDigits := getDigits();
+writeln;
+for n := 1 to numDigits-1 do
+write(fibonacci(n)+', ');
+writeln(fibonacci(numDigits)); 
+writeln(n); //should throw an error (outside scope)
+end;.

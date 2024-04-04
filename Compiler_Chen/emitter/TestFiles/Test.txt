@@ -1,0 +1,8 @@
+//DOES NOT WORK, WOULD NEED TO IMPLEMENT SOMETHING LIKE LINKED HASHMAPS I THINK
+//(I DID THIS BEFORE BREAK AND FORGOT)
+procedure testFor();
+for i := 1 to 10 do
+for j := 1 to 10 do
+writeln(i*j);
+
+testFor();

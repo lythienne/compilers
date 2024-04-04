@@ -1,0 +1,22 @@
+var
+number,square : integer; 
+
+begin
+WRITELN('CHECK IF INTEGER IS A PERFECT SQUARE: ');
+READLN(number);
+FOR i := 1 TO number DO
+BEGIN
+    square := i * i;
+    IF square > number THEN 
+    BEGIN
+        WRITELN(number+ ' IS NOT A PERFECT SQUARE');
+        i := number;
+    END;
+    ELSE IF square = number THEN
+    BEGIN
+        WRITELN(number+ ' IS A PERFECT SQUARE AND '+i+' IS ITS SQUARE ROOT ');
+        i := number;
+    END;
+END;
+end;
+.

@@ -1,0 +1,29 @@
+var 
+numDigits:integer;
+
+function fibonacci(x:integer):integer;
+begin
+if x<=2 then fibonacci := 1;
+else fibonacci := fibonacci(x-1) + fibonacci(x-2);
+end;
+
+(*get how many digits of fibonacci sequence to use*)
+function getDigits():integer;
+begin
+readln(getDigits);
+end;
+
+procedure printDigits();
+begin
+for n := 1 to numDigits do
+writeln(fibonacci(n));
+
+writeln(n); //should throw an error (outside scope), remove line to test program
+
+end;
+
+begin 
+numDigits := getDigits();
+writeln; //prints an empty newline
+printDigits();
+end;.

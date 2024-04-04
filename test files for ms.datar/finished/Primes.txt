@@ -1,0 +1,22 @@
+(*need to have implemented booleans*)
+
+var
+number:integer;
+prime:boolean;
+
+(*check if number is prime*)
+begin
+    READLN(number);
+    prime := TRUE;
+    FOR i := 2 TO number-1 DO
+    BEGIN
+        IF number mod i = 0 THEN
+        BEGIN
+            WRITELN(-1);	//number is not prime
+            prime := FALSE;
+            i := number-1;
+        END;
+    END;
+    IF prime THEN WRITELN(1);	//number is prime
+end;
+.

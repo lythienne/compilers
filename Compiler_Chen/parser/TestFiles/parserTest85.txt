@@ -1,0 +1,20 @@
+//@author Rohan Ramkumar
+//@version 11/03/2023
+PROCEDURE foo();
+BEGIN
+x:=2;
+bar();
+END;
+PROCEDURE bar();
+BEGIN
+x:=3;
+END;
+
+var 
+x:integer;
+BEGIN
+x:=1;
+foo();
+WRITELN(x);
+END;
+//should output 3

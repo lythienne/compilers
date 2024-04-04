@@ -1,0 +1,23 @@
+VAR x;
+PROCEDURE square(n);
+BEGIN(*
+a
+among
+*)
+RETURN n * n;
+END;
+BEGIN
+//sus among us sussy baka sussy
+x := 1;
+WHILE x <= 10 DO
+BEGIN
+/* Sussy baka Among Us, bro
+Man, you looking like imposter, man
+Man, you looking, eh
+Sus, bro */
+(*hi*)
+WRITELN(square(x));
+x := x + 1;
+END;
+END;
+.

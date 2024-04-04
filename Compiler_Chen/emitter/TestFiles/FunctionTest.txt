@@ -1,0 +1,16 @@
+function pleasedontdie(x:integer; y:string; z:boolean):string;
+var 
+    x1:integer; 
+    y1:string;
+    z1:boolean;
+begin
+    readln(x1, y1, z1);
+    x1 := x+x1;
+    y1 := y+y1;
+    z1 := z AND z1;
+
+    pleasedontdie := x1+y1+z1;
+end;
+
+writeln(pleasedontdie(3, 'hi ', true));
+    

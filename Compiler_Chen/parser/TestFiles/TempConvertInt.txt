@@ -1,0 +1,97 @@
+(*TAKEN FROM http://pirate.shu.edu/~wachsmut/Teaching/CSAS1111/Notes-Pascal/pascal1.html
+THIS WAS BEFORE I IMPLEMENTED REALS*)
+
+VAR
+   UserChoice : STRING;
+   UserInput  : INT;
+   Answer     : INT;
+   Decimal    : INT;
+
+PROCEDURE ShowTheMenu;
+BEGIN
+     WRITELN;
+     WRITELN('     A Basic Program');
+     WRITELN('     ---------------');
+     WRITELN(' a) Celcius to Fahrenheit');
+     WRITELN(' b) Fahrenheit to Celcius');
+     WRITELN;
+     WRITELN(' x) To exit the program');
+     WRITELN;
+END;
+
+PROCEDURE GetUserChoice;
+BEGIN
+    WRITE('Enter your choice:       ');
+    READLN(UserChoice);
+END;
+
+PROCEDURE GetNumberToConvert;
+BEGIN
+   WRITE('Enter number to convert: ');
+   READLN(UserInput);
+END;
+
+PROCEDURE Wait;
+BEGIN
+    WRITE('Press RETURN to continue ...');
+    READLN;
+END;
+
+FUNCTION ToFahrenheit(x: INT): INT;
+VAR FahrenheitRaw:INT;
+BEGIN
+    FahrenheitRaw := x * 10000 * 9 / 5 + 32 * 10000;
+    ToFahrenheit := FahrenheitRaw / 10000;
+    decimal := FahrenheitRaw MOD 10000 / 100;
+    IF decimal < 0 THEN decimal := -decimal;
+END;
+
+FUNCTION ToCelcius(x: INT): INT;
+VAR CelciusRaw:INT;
+BEGIN
+    CelciusRaw := (x - 32) * 10000 * 5 / 9;
+    ToCelcius := CelciusRaw / 10000;
+    decimal := CelciusRaw MOD 10000 / 100;
+    IF decimal < 0 THEN decimal := -decimal;
+END;
+
+PROCEDURE DoTheConversion;
+BEGIN
+     IF (UserChoice = 'a') THEN
+        answer := ToFahrenheit(UserInput);
+     IF (UserChoice = 'b') THEN
+        answer := ToCelcius(UserInput);
+END;
+
+PROCEDURE DisplayTheAnswer;
+BEGIN
+     WRITELN;
+     WRITELN('        Degree');
+     IF (UserChoice = 'a') THEN
+        WRITELN('Celcius    | Fahrenheit');
+     IF (UserChoice = 'b') THEN
+        WRITELN('Fahrenheit |   Celcius');
+     WRITELN('------------------------');
+     WRITE(UserInput);
+     WRITE('   |   ');
+     WRITE(Answer+'.'+Decimal);
+     WRITELN;
+     WRITELN;
+END;
+
+BEGIN
+   UserChoice := 'q';
+   WHILE (UserChoice <> 'x') DO
+      BEGIN
+         ShowTheMenu;
+         GetUserChoice;
+         IF (UserChoice = 'a') OR
+            (UserChoice = 'b') THEN
+           BEGIN
+              GetNumberToConvert;
+              DoTheConversion;
+              DisplayTheAnswer;
+              Wait;
+           END;
+      END;
+END;.

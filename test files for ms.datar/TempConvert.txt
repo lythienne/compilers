@@ -1,0 +1,88 @@
+(*TAKEN FROM http://pirate.shu.edu/~wachsmut/Teaching/CSAS1111/Notes-Pascal/pascal1.html*)
+(*WITH REALS, TBH LOOKS UGLIER BECAUSE I DON'T HAVE TRUNCATING*)
+
+VAR
+   UserChoice : STRING;
+   UserInput  : REAL;
+   Answer     : REAL;
+
+PROCEDURE ShowTheMenu;
+BEGIN
+     WRITELN;
+     WRITELN('     A Basic Program');
+     WRITELN('     ---------------');
+     WRITELN(' a) Celcius to Fahrenheit');
+     WRITELN(' b) Fahrenheit to Celcius');
+     WRITELN;
+     WRITELN(' x) To exit the program');
+     WRITELN;
+END;
+
+PROCEDURE GetUserChoice;
+BEGIN
+    WRITE('Enter your choice:       ');
+    READLN(UserChoice);
+END;
+
+PROCEDURE GetNumberToConvert;
+BEGIN
+   WRITE('Enter number to convert: ');
+   READLN(UserInput);
+END;
+
+PROCEDURE Wait;
+BEGIN
+    WRITE('Press RETURN to continue ...');
+    READLN;
+END;
+
+FUNCTION ToFahrenheit(x: REAL): REAL;
+BEGIN
+    ToFahrenheit := x * 9 / 5 + 32;
+END;
+
+FUNCTION ToCelcius(x: REAL): REAL;
+BEGIN
+    ToCelcius := (x - 32) * 5 / 9;
+END;
+
+PROCEDURE DoTheConversion;
+BEGIN
+     IF (UserChoice = 'a') THEN
+        answer := ToFahrenheit(UserInput);
+     IF (UserChoice = 'b') THEN
+        answer := ToCelcius(UserInput);
+END;
+
+PROCEDURE DisplayTheAnswer;
+BEGIN
+     WRITELN;
+     WRITELN('        Degree');
+     IF (UserChoice = 'a') THEN
+        WRITELN('Celcius    | Fahrenheit');
+     IF (UserChoice = 'b') THEN
+        WRITELN('Fahrenheit |   Celcius');
+     WRITELN('------------------------');
+     WRITE(UserInput);
+     WRITE('   |   ');
+     WRITE(Answer);
+     WRITELN;
+     WRITELN;
+END;
+
+BEGIN
+   UserChoice := 'q';
+   WHILE (UserChoice <> 'x') DO
+      BEGIN
+         ShowTheMenu;
+         GetUserChoice;
+         IF (UserChoice = 'a') OR
+            (UserChoice = 'b') THEN
+           BEGIN
+              GetNumberToConvert;
+              DoTheConversion;
+              DisplayTheAnswer;
+              Wait;
+           END;
+      END;
+END;.

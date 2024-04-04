@@ -1,0 +1,24 @@
+function equal(x,y:string):boolean;
+var z:string;
+begin
+z:='bye';
+equal := (x = y) and (x = z);
+end;
+
+var
+x:string;
+y:string;
+z:string;
+
+begin 
+x:='hi';
+y:='hi';
+z:='hi';
+if equal(x,y) then 
+    writeln(x+' and '+y+' are equal to '+z);
+else
+    writeln(x+' and '+y+' are not equal to '+z); (*should print: "hi and hi are not equal to hi"*)
+end;
+.
+
+(* INTENDED OUTPUT: "hi and hi are not equal to hi" *)

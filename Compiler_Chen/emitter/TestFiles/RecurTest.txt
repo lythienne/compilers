@@ -1,0 +1,30 @@
+function recur(x,y:integer):string;
+begin
+writeln(x+' '+y);
+if x=0 then 
+    begin
+        writeln('ZERO');
+        recur := 'DONE';
+    end;
+else if x<0 then 
+    writeln('SHOULDNT BE HERE');
+else 
+    begin 
+        recur(y,x);
+        recur := recur(x-1, y); 
+    end;
+end;
+
+writeln(recur(2,0));.
+
+(* INTENDED OUTPUT:
+ * 2 0
+ * 0 2
+ * ZERO
+ * 1 0
+ * 0 1
+ * ZERO
+ * 0 0
+ * ZERO
+ * DONE
+*)

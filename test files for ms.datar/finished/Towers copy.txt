@@ -1,0 +1,11 @@
+var x:integer;
+
+function mystery(y:integer):integer;
+var x:integer;
+begin
+	if (x<0) or (x>10) then
+	mystery := 
+
+begin
+	mystery(readln(x));
+	

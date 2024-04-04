@@ -1,0 +1,22 @@
+VAR
+number,square : INTEGER; 
+
+(*CHECK IF INTEGER IS A PERFECT SQUARE*)
+BEGIN
+    READLN(number);
+    FOR i := 1 TO number DO
+    BEGIN
+        square := i * i;
+        IF square > number THEN 
+        BEGIN
+            WRITELN(-1);	//number is not perfect square
+            i := number;
+        END;
+        ELSE IF square = number THEN
+        BEGIN
+	    WRITELN(i);		//number is perfect square, print square root
+            i := number;
+        END;
+    END;
+END;
+.

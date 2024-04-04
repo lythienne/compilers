@@ -1,0 +1,18 @@
+const
+n=3;
+r=3.0;
+
+begin
+writeln(r+' '+n);
+writeln(r/4);
+writeln(n/4);
+r:=3+3;
+writeln(r);
+end;.
+
+(*INTENDED OUTPUT:
+ * 3.0 3
+ * 0.75
+ * 0
+ * 6
+*)

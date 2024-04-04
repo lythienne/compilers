@@ -1,0 +1,58 @@
+(*THIS WAS WRITTEN PRE-PROCEDURES LAB AND IM TOO LAZY TO CHANGE ALL OF IT*)
+var
+operator, num1, num2, continue: integer;
+y: string;
+
+function getOperator():integer;
+var operator:integer;
+begin
+writeln('WELCOME TO PASCAL CALCULATOR 1=ADD, 2=SUBTRACT, 3=MULTIPLY, 4=DIVIDE, 5=QUIT, ENTER YOUR SELECTION: ');
+readln(operator);
+while (operator < 1) or (operator > 5) do
+begin
+    writeln('WELCOME TO PASCAL CALCULATOR 1=ADD, 2=SUBTRACT, 3=MULTIPLY, 4=DIVIDE, 5=QUIT, ENTER YOUR SELECTION: ');
+    readln(operator);
+end;
+getOperator := operator;
+end;
+
+begin
+operator := getOperator();
+if operator <> 5 then
+begin
+    writeln('INPUT FIRST INTEGER: ');
+    readln(num1);
+    y := 'SECOND ';
+    while operator <> 5 do
+    begin
+        writeln('INPUT '+y+'INTEGER: ');
+        readln(num2);
+        IF operator=1 THEN num1 := num1+num2;
+        ELSE IF operator=2 THEN num1 := num1-num2;
+        ELSE IF operator=3 THEN num1 := num1*num2;
+        ELSE IF operator=4 THEN num1 := num1/num2;
+        
+        WRITELN('RESULT: '+num1);
+        WRITELN('KEEP GOING? 1=YES, 2=NO: ');
+        READLN(continue);
+        WHILE (continue <> 1) AND (continue <> 2) DO
+        BEGIN
+            WRITELN('KEEP GOING? 1=YES, 2=NO: ');
+            READLN(continue);
+        END;
+        IF continue=1 THEN 
+        BEGIN
+            y := 'ADDITIONAL ';
+            WRITELN('1=ADD, 2=SUBTRACT, 3=MULTIPLY, 4=DIVIDE, ENTER YOUR SELECTION: ');
+            READLN(operator);
+            WHILE (operator < 1) OR (operator > 4) DO
+            BEGIN
+                WRITELN('WELCOME TO PASCAL CALCULATOR 1=ADD, 2=SUBTRACT, 3=MULTIPLY, 4=DIVIDE, ENTER YOUR SELECTION: ');
+                READLN(operator);
+            END;
+        END;
+        ELSE IF continue=2 THEN operator:=5;
+    END;
+END;
+end;
+.
